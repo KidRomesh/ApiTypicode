@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Posts } from './Models/posts.model';
-import { PostService } from './Services/PostService/post.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,15 +8,12 @@ import { PostService } from './Services/PostService/post.service';
 })
 export class AppComponent {
   title = 'CRUDoperation';
-  posts:Posts[]=[];
+  
 
-  constructor(private postservice: PostService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getposts();
+    
   }
-  getposts(){
-    this.postservice.getPosts().subscribe(post => this.posts= post);
 
-  }
 }
