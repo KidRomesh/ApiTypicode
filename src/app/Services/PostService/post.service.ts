@@ -16,12 +16,19 @@ export class PostService {
   }
   getPosts():Observable<Posts[]>{
     return this.http.get<Posts[]>(this.postUrl)
-    // .pipe(
-    //   tap(_ => this.log("fetched Posts")),
-    //   catchError(this.handleError<Posts[]>('getPosts', [])),
-    // );
+
   }
 
+
+  getPost(id: number): Observable<Posts> {
+    const url = `${this.postUrl}/${id}`;
+    return this.http.get<Posts>(url)
+  }
+
+  update(post:Posts): Observable<any>{
+    return this.http.put<Posts>(this.postUrl, post, this.httpOptions);
+
+  }
 
 
   // private handleError<T>(operation = 'operation', result?: T) {

@@ -4,18 +4,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { AboutComponent } from './Components/About/about/about.component';
-import { HomeComponent } from './Components/Home/home/home.component';
+import { HomeComponent } from './Components/home/home.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { PostService } from './Services/PostService/post.service';
+import { EditComponent } from './Components/edit/edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
+    EditComponent,
+  
 
   ],
   imports: [
@@ -25,7 +27,8 @@ import { PostService } from './Services/PostService/post.service';
     MatCardModule,
     HttpClientModule,
     MatExpansionModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { Posts } from 'src/app/Models/posts.model';
 import { PostService } from 'src/app/Services/PostService/post.service';
 
@@ -10,8 +11,9 @@ import { PostService } from 'src/app/Services/PostService/post.service';
 export class HomeComponent implements OnInit {
 
   posts:Posts[]=[];
+  pos:NavigationExtras[]=[];
 
-  constructor(private postservice: PostService) { }
+  constructor(private postservice: PostService , private router: Router) { }
 
   ngOnInit(): void {
     this.getposts();
@@ -20,4 +22,5 @@ export class HomeComponent implements OnInit {
     this.postservice.getPosts().subscribe(post => this.posts= post);
 
   }
+
 }

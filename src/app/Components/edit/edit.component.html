@@ -1,0 +1,35 @@
+<div class="contianer">
+   <div class="row justify-content-center my-5">
+      <div class="col-lg-6">
+         <mat-card *ngIf="Post">
+            <mat-card-title>
+               <h2>{{Post.title | uppercase}} Details</h2>
+            </mat-card-title>
+            <mat-card-subtitle>
+               <div><span>Id: </span>{{Post.id}}</div>
+            </mat-card-subtitle>
+            <mat-card-content>
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="id">PostID</label>
+                  <input id="id" type="text" [(ngModel)]="Post.id"class="form-control"/>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="title">Title</label>
+                <input id="title" type="text" [(ngModel)]="Post.title" class="form-control "/>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="Content">Info</label>
+                <textarea id="Content" type="text" [(ngModel)]="Post.body" class="form-control"></textarea>
+              </div>
+            </mat-card-content>     
+            <mat-card-actions>
+               <button mat-button type="submit" (click)="submit()">
+                   Save
+               </button>
+           </mat-card-actions>
+         </mat-card>   
+      </div>
+   </div>
+</div>
+
+
